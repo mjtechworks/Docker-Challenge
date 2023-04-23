@@ -1,8 +1,7 @@
 
 # The FastAPI, Nuxt, Docker Challenge for Pierre-Alexis Ciavaldini
 
-
-
+This is the test task for hiring.
 
 ### Frontend
 

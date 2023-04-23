@@ -1,20 +1,43 @@
 version: '3'
 
 services:
-  nuxt:
+  # nuxt:
+  #   build:
+  #     context: ./Frontend
+  #     dockerfile: Dockerfile
+  #   container_name: nuxt
+  #   restart: always
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ./nuxt:/app/
+  #     - /app/node_modules
+  # app:
+  #   build:
+  #     context: ./Frontend
+  #     dockerfile: Dockerfile
+  #   image: node-app
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - .:/app
+  #     - /app/node_modules
+  app:
     build:
-      context: ./app
+      context: ./Frontend
       dockerfile: Dockerfile
-    container_name: nuxt
-    restart: always
     ports:
-      - 3000:3000
+      - "3000:3000"
     volumes:
-      - ./nuxt:/usr/src/app
+      - .:/app
+    environment:
+      NODE_ENV: development
+
 
   # fastapi:
   #   build:
-  #     context: ./backend
+  #     context: ./Backend
   #     dockerfile: Dockerfile
   #   container_name: fastapi
   #   restart: always

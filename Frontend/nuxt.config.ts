@@ -17,5 +17,11 @@ export default defineNuxtConfig({
           tailwindcss: {},
           autoprefixer: {},
         },
-      },
+    },
+    server: {
+      host: '0.0.0.0'
+    },
+    env: {
+      apiUrl: 'http://localhost:8000',
+    }
 })
