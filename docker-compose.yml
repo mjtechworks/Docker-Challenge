@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  nuxt:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: nuxt
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./nuxt:/usr/src/app
+
+  # fastapi:
+  #   build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile
+  #   container_name: fastapi
+  #   restart: always
+  #   ports:
+  #     - 8000:8000
+  #   command: uvicorn main:app --host 0.0.0.0 --port 8000

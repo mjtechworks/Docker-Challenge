@@ -1,0 +1,27 @@
+version: "3"
+services:
+  backend:
+    build: ./backend
+    expose:
+      - "8000"
+    volumes:
+      - ./backend:/code
+      - static:/code/static_root
+      - media:/code/media
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - AXIOS_BASEURL=http://backend:8000/api
+        - AXIOS_BROWSER_BASEURL=/api
+    expose:
+      - "3000"
+    command: "npm run dev"
+    environment:
+      - AXIOS_BASEURL=http://backend:8000/api
+      - AXIOS_BROWSER_BASEURL=/api
+    volumes:
+      - ./frontend:/code
