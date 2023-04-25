@@ -13,7 +13,7 @@
     </div>
 
     <div class="flex item-center justify-center mt-6"> 
-      <span class="text-2xl text-white">The reversed string is</span>
+      <span class="text-2xl text-white">The reversed string is ok</span>
     </div>
 
     <div class="flex item-center justify-center mt-6"> 
